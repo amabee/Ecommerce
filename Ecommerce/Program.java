@@ -140,7 +140,7 @@ public class Program {
     private void AddtoCart(){
         ProductList();
       int choice = 0;
-      System.out.print("Enter the Number of the Product you want to buy: ");
+      System.out.print("Enter the Number of the Product you want to buy\nIf you are done picking press 6 to checkout items.\nOption: ");
       for(int i = 0; i<itemList.size(); i++){
         System.out.print("\n"+ i +"." + " " + itemList.get(i).getProdName() + " = " + itemList.get(i).getPrice() + "\n");
       }
@@ -196,6 +196,7 @@ public class Program {
         case 6: 
                 System.out.println("You want to proceed to checkout?");
                 System.out.println("Press 'y' for Yes 'n' for No");
+                scan.nextLine();
                choice = scan.next().charAt(0);
                 switch(choice){
                     case 'y' : 
@@ -215,6 +216,7 @@ public class Program {
                 }
                 CheckOut();
                 addtoCart.clear();
+                Homepage();
                 break;
                 case 'n': break;
                 }
